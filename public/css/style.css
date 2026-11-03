@@ -110,7 +110,9 @@ h3{font-size:var(--t-h3);line-height:1}
 .galeria-nota a{color:var(--aco);font-weight:700}
 
 /* ---------- Avaliações ---------- */
-.selo-google{display:inline-flex;align-items:baseline;gap:.6rem;margin-top:1.25rem;font-size:1.0625rem;color:var(--cinza)}
+/* Nota grande à esquerda; à direita, estrelas em cima e total de avaliações embaixo */
+.selo-google{display:flex;align-items:center;gap:.85rem;margin-top:1.25rem;font-size:1.0625rem;color:var(--cinza)}
+.selo-info{display:flex;flex-direction:column;gap:.2rem;line-height:1.2}
 .selo-google strong{font:700 2.75rem/1 var(--fonte-titulo);color:var(--branco)}
 .selo-google .estrela{letter-spacing:2px}
 .avaliacoes{list-style:none;padding:0;margin-top:2.25rem;display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.75rem;overscroll-behavior-x:contain}
