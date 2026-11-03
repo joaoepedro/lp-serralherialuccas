@@ -1,6 +1,0 @@
-# DEMONSTRAÇÃO: o rastreamento é liberado, mas a página pede para não ser indexada
-# (meta robots no index.html e cabeçalho X-Robots-Tag no vercel.json).
-User-agent: *
-Allow: /
-
-Sitemap: https://serralheria-luccas.vercel.app/sitemap.xml

@@ -4,7 +4,7 @@ Proposta de novo site para a **Serralheria Luccas**, serralheria com 30 anos em 
 O site atual tem texto de modelo esquecido no código, letras trocadas, nenhum botão de WhatsApp, texto de 10px no celular e título "Serralherialuccas.com" no Google.
 Esta página resolve isso com foco em **SEO local** e **pedido de orçamento pelo WhatsApp**.
 
-Demonstração: https://serralheria-luccas.vercel.app/ (fora do Google até o cliente aprovar)
+Demonstração: https://serralheria-luccas.pages.dev/ (Cloudflare Pages; fora do Google até o cliente aprovar)
 
 ## Tecnologias
 HTML, CSS e JavaScript puros: sem framework, sem biblioteca e sem etapa de build.
@@ -28,7 +28,7 @@ HTML, CSS e JavaScript puros: sem framework, sem biblioteca e sem etapa de build
 
 \* O único item de SEO que falha é o `noindex` proposital da demonstração. Sem ele, o SEO dá 100 (testado).
 
-- Celular: LCP 1,2 s · CLS 0 · TBT 0 ms. Carga inicial de 58 KB.
+- Celular: LCP 1,2 s · CLS 0 · TBT 0 ms. Primeira tela com cerca de 120 KB (fotos, fontes e logo).
 - axe (WCAG 2.2 AA + boas práticas): 0 problemas em 375, 768 e 1440px e na política de privacidade.
 - Sem rolagem lateral em 13 tamanhos, de 320px a 1920px, incluindo iPads na vertical e na horizontal.
 - Teclado: ordem lógica, foco visível, menu fecha com Esc, perguntas frequentes abrem com Enter.
@@ -37,20 +37,25 @@ HTML, CSS e JavaScript puros: sem framework, sem biblioteca e sem etapa de build
 
 ## Rodar localmente
 ```
+cd public
 python -m http.server 8000
 ```
 Abra http://localhost:8000
 
 ## Estrutura
 ```
-index.html · politica-de-privacidade.html
-css/ reset.css · variables.css (cores e fontes) · style.css
-js/  config.js (dados) · tracking.js · main.js
-assets/img/ (WebP, ícones, imagem de compartilhamento) · assets/fonts/ (.woff2)
-docs/ briefing, persona, copy, identidade visual, fotos, avaliações, guia de edição
-robots.txt · sitemap.xml · vercel.json · .vercelignore
+public/                      ← só esta pasta vai para o ar
+  index.html · politica-de-privacidade.html
+  css/ reset.css · variables.css (cores e fontes) · style.css
+  js/  config.js (dados) · tracking.js · main.js
+  assets/img/ (WebP, ícones, imagem de compartilhamento) · assets/fonts/ (.woff2)
+  robots.txt · sitemap.xml · _headers (cache e segurança)
+docs/                        ← briefing, persona, copy, identidade visual, guia de edição
+README.md
 ```
-A pasta `docs/` e este README não são publicados no site (`.vercelignore`).
+
+## Publicação (Cloudflare Pages)
+Workers & Pages › Create › Pages › conectar o repositório. Framework preset: **None** · Build command: vazio · Build output directory: **public**.
 
 ## Créditos
 Fotos de demonstração do Unsplash (licença livre). Ver `docs/fotos.md`.
