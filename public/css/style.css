@@ -47,7 +47,7 @@ h3{font-size:var(--t-h3);line-height:1}
 /* Logo oficial (o mesmo do WhatsApp e do Instagram); a borda branca de adesivo funciona sobre o escuro */
 .logo{display:block;flex:none;text-decoration:none}
 .logo img{width:4.25rem;height:auto;filter:drop-shadow(0 4px 10px rgba(0,0,0,.45))}
-.logo-rodape img{width:8.75rem;filter:none}
+.logo-rodape img{width:15rem;filter:none}
 .menu-botao{display:flex;align-items:center;gap:.5rem;padding:.6rem .8rem;border:1.5px solid rgba(242,244,245,.6);border-radius:var(--borda);font-weight:600;font-size:1rem;min-height:2.75rem}
 .menu-botao svg{width:1.25rem;height:1.25rem}
 .menu{display:none}
@@ -168,6 +168,11 @@ h3{font-size:var(--t-h3);line-height:1}
 .rede svg{width:1.4rem;height:1.4rem}
 @media (hover:hover) and (pointer:fine){.rede:hover{color:var(--bronze-detalhe);border-color:var(--bronze-detalhe)}}
 .rodape .area{margin-top:1rem;color:var(--cinza)}
+.rodape-local{display:flex;flex-direction:column;gap:1.5rem}
+/* Bloco da marca (logo, endereço e ícones) centralizado */
+.rodape-marca{text-align:center}
+.rodape-marca .logo{display:inline-block}
+.rodape-marca .redes{justify-content:center}
 /* Links de texto soltos com área de toque de pelo menos 24px (WCAG 2.2) */
 .galeria-nota a,.ver-todas,.telefones a,.rodape-fim a{display:inline-block;padding-block:.3rem}
 .rodape-fim{margin-top:3rem;padding-top:1.25rem;border-top:1px solid var(--linha-escura);display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;color:var(--cinza);font-size:.9375rem}
@@ -204,6 +209,16 @@ h3{font-size:var(--t-h3);line-height:1}
   .js .revelar.visivel{opacity:1;transition:opacity .4s}
 }
 
+/* Como funciona: os cartões compartilham as linhas internas (subgrid),
+   então todos os parágrafos começam na mesma altura, mesmo com títulos de tamanhos diferentes */
+@media (min-width:48rem){
+  .passos{grid-auto-rows:auto;row-gap:1rem}
+  .passo{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:1.1rem;padding:4.5rem 1.5rem 1.9rem}
+  .passo::before{top:1.4rem;left:1.5rem}
+  .passo h3{align-self:start}
+  .passo p{margin-top:0}
+}
+
 /* =================== Tablet =================== */
 @media (min-width:48rem){
   .galeria{grid-auto-flow:row;grid-template-columns:repeat(6,1fr);overflow:visible;padding:0}
@@ -233,8 +248,6 @@ h3{font-size:var(--t-h3);line-height:1}
   .hero::after{background:linear-gradient(90deg,rgba(var(--grafite-rgb),.96) 0%,rgba(var(--grafite-rgb),.85) 38%,rgba(var(--grafite-rgb),.15) 70%,rgba(var(--grafite-rgb),.05) 100%)}
   .hero-foto{object-position:50% 50%}
   .passos{grid-template-columns:repeat(4,1fr)}
-  .passo{padding:4.5rem 1.5rem 1.75rem}
-  .passo::before{top:1.4rem;left:1.5rem}
   .avaliacao{grid-column:span 2}
   .avaliacao:nth-child(1){grid-column:span 4;grid-row:span 2;justify-content:center;padding:2.25rem}
   .avaliacao:nth-child(1) blockquote p{font-size:1.75rem;line-height:1.4}
@@ -243,7 +256,11 @@ h3{font-size:var(--t-h3);line-height:1}
   .dicas{grid-template-columns:1fr 1fr;column-gap:3rem}
   .secao-dicas .cabecalho{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end}
   .rodape{padding-bottom:3.5rem}
-  .rodape-grade{grid-template-columns:1fr 1fr 1.2fr}
+  .rodape-grade{grid-template-columns:1fr 2fr;gap:3.5rem;align-items:start}
+  /* No computador: mapa grande em cima, "Onde atendemos" logo abaixo */
+  .rodape-local .mapa{order:-1;aspect-ratio:2/1}
+  .rodape-local .area{margin-top:.5rem}
+  .rodape-marca .logo-rodape img{width:14rem}
   .whats-flutuante{display:none}
 }
 
