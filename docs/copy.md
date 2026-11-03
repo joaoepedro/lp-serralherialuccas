@@ -42,16 +42,24 @@ Logo "SL Serralheria Luccas" · Serviços · Trabalhos · Avaliações · Contat
 
 | Serviço | Texto (benefício primeiro) |
 |---|---|
-| **Portões** | Portão que abre leve e fecha seguro. Fabricação sob medida, conserto de portão basculante, troca de cabo de aço e ajuste de roldanas e trilhos. |
-| **Grades e corrimãos** | Proteção para janelas, portas e vitrines de loja, e corrimãos firmes para escadas. Tudo medido no local. |
+| **Portões** | Portão que abre leve e fecha seguro. Fabricação sob medida (social, de garagem e de painel), conserto de portão basculante, troca de cabo de aço, tratamento de ferrugem e atendimento de emergência. |
+| **Grades, portas e corrimãos** | Grades de proteção para janelas, portas e vitrines de loja, portas de ferro e para vidro, e corrimãos firmes para escadas. Tudo medido no local. |
 | **Travas e fechaduras** | Mais segurança sem trocar o portão: travas elétricas, eletromagnéticas e fechaduras tetra. |
-| **Consertos e manutenção** | Solda, reforço e troca de peças em portões, grades e estruturas já instaladas. A manutenção preventiva evita o portão travar na hora errada. |
+| **Consertos e manutenção** | Reparo de ferragens em geral: portões, grades e estruturas já instaladas. A manutenção preventiva evita o portão travar na hora errada. |
 | **Peças sob medida** | Estruturas de mesa, lixeiras, playgrounds, janelas e o que o seu projeto pedir. Residencial, comercial e industrial. |
 | **Pintura de estruturas** | Toda peça sai com pintura anticorrosiva. A pintura final, na cor que você escolher, é feita à parte. |
 
 *(Se confirmado: incluir "Motores de portão" em Portões.)*
 
 **Linha final:** Não achou o que precisa? **Mande uma foto pelo WhatsApp** e a gente avalia.
+
+## 2b. Faixa de emergência
+Faixa em vermelho escuro de sinalização, logo depois dos serviços (o site atual lista "Suporte para emergências relacionadas a portões"; atendimento "em casos especiais", conforme o FAQ).
+**Título:** Portão travou ou não fecha?
+**Texto:** Em casos de emergência, chame no WhatsApp. A gente confirma a disponibilidade e o valor antes de ir.
+**Botão:** Tenho uma emergência
+**Mensagem pronta:** "EMERGÊNCIA: Vim pelo site. Meu portão está com problema e preciso de ajuda: "
+Não prometer plantão 24h nem prazo de chegada.
 
 ## 3. Como funciona
 🎯 Clareza que reduz o medo de "ser enrolado"

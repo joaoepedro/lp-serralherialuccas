@@ -78,6 +78,21 @@ h3{font-size:var(--t-h3);line-height:1}
 .servicos-final{margin-top:2rem;font-size:1.1875rem}
 .servicos-final a{color:var(--aco);font-weight:700}
 
+/* ---------- Faixa de emergência (vermelho escuro de sinalização) ---------- */
+.emergencia{background:var(--alerta);color:var(--branco);border-top:4px solid var(--alerta-filete);padding-block:3.25rem 3.5rem}
+.emergencia-grade{display:grid;grid-template-columns:auto 1fr;gap:1.75rem 1.1rem;align-items:start}
+.emergencia-icone{width:2.5rem;height:2.5rem;color:var(--alerta-filete);margin-top:.15rem}
+.emergencia h2{font-size:clamp(1.875rem,6vw,2.5rem);line-height:1}
+.emergencia p{margin-top:.9rem;line-height:1.6;color:var(--alerta-texto);max-width:36rem}
+.emergencia .btn{grid-column:1 / -1;justify-self:stretch}
+.btn-emergencia{background:var(--branco);color:var(--alerta-escuro)}
+@media (hover:hover) and (pointer:fine){.btn-emergencia:hover{background:#FFFFFF}}
+@media (min-width:60rem){
+  .emergencia{padding-block:2.75rem}
+  .emergencia-grade{grid-template-columns:auto 1fr auto;align-items:center;gap:1rem 1.5rem}
+  .emergencia .btn{grid-column:auto;justify-self:start}
+}
+
 /* ---------- Como funciona ---------- */
 .passos{list-style:none;padding:0;margin-top:2.5rem;display:grid;gap:1rem;counter-reset:passo}
 .passo{position:relative;padding:1.5rem 1.5rem 1.5rem 4.75rem;background:rgba(0,0,0,.24);border-radius:var(--borda);counter-increment:passo}
