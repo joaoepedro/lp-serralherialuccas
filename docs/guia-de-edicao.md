@@ -25,7 +25,7 @@ Se algo quebrar: no GitHub, abra o histórico do arquivo e volte para a versão 
 ## 5. Ao sair da demonstração (versão final)
 - [ ] `public/index.html`: remover `<meta name="robots" content="noindex, nofollow">`
 - [ ] `public/_headers`: remover a linha `X-Robots-Tag: noindex`
-- [ ] Trocar `https://serralheria-luccas.pages.dev/` por `https://serralherialuccas.com/` em: `public/index.html` (canonical, og:url, og:image e dados estruturados), `public/robots.txt` e `public/sitemap.xml`
+- [ ] Trocar `https://lp-serralherialuccas.pages.dev/` por `https://serralherialuccas.com/` em: `public/index.html` (canonical, og:url, og:image e dados estruturados), `public/robots.txt` e `public/sitemap.xml`
 - [ ] Trocar as fotos de banco pelas fotos reais (mesmo nome e proporção) e revisar os `alt`
 - [ ] Pedir o logo original em boa resolução e regerar `logo-serralheria-luccas-160/280.webp`
 - [ ] Confirmar os dados pendentes (`docs/briefing.md`) e o texto "Sobre"

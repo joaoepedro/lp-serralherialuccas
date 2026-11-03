@@ -4,7 +4,7 @@ Proposta de novo site para a **Serralheria Luccas**, serralheria com 30 anos em 
 O site atual tem texto de modelo esquecido no código, letras trocadas, nenhum botão de WhatsApp, texto de 10px no celular e título "Serralherialuccas.com" no Google.
 Esta página resolve isso com foco em **SEO local** e **pedido de orçamento pelo WhatsApp**.
 
-Demonstração: https://serralheria-luccas.pages.dev/ (Cloudflare Pages; fora do Google até o cliente aprovar)
+Demonstração: https://lp-serralherialuccas.pages.dev/ (Cloudflare Pages; fora do Google até o cliente aprovar)
 
 ## Tecnologias
 HTML, CSS e JavaScript puros: sem framework, sem biblioteca e sem etapa de build.
@@ -45,7 +45,7 @@ Abra http://localhost:8000
 ## Estrutura
 ```
 public/                      ← só esta pasta vai para o ar
-  index.html · politica-de-privacidade.html
+  index.html · politica-de-privacidade.html · 404.html
   css/ reset.css · variables.css (cores e fontes) · style.css
   js/  config.js (dados) · tracking.js · main.js
   assets/img/ (WebP, ícones, imagem de compartilhamento) · assets/fonts/ (.woff2)
