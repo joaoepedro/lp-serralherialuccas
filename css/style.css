@@ -1,0 +1,253 @@
+/* =========================================================
+   Serralheria Luccas: estilos da página
+   Celular primeiro: o CSS base é para 375px; os @media ampliam.
+   ========================================================= */
+
+body{background:var(--grafite);color:var(--branco);font-family:var(--fonte-texto);font-size:var(--t-corpo)}
+.container{width:min(100% - 2*var(--gutter),var(--largura));margin-inline:auto}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Link "Pular para o conteúdo": aparece só ao receber foco pelo teclado */
+.pular{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--branco);color:var(--tinta);padding:.75rem 1rem;border-radius:var(--borda);font-weight:700}
+.pular:focus{top:1rem}
+
+:focus-visible{outline:3px solid var(--bronze-detalhe);outline-offset:3px}
+.clara :focus-visible{outline-color:var(--aco)}
+
+/* ---------- Títulos e textos comuns ---------- */
+.chapeu{display:block;font:700 .9375rem/1.2 var(--fonte-titulo);letter-spacing:.14em;text-transform:uppercase;color:var(--bronze-detalhe)}
+.clara .chapeu{color:var(--aco)}
+/* Elemento memorável: o "cordão de solda" (pontos em linha) abaixo do chapéu */
+.cordao{display:block;width:9.5rem;height:8px;margin:.75rem 0 1.1rem;background:radial-gradient(circle at 4px 4px,var(--bronze-detalhe) 3px,transparent 3.6px) 0 0/10px 8px repeat-x}
+.clara .cordao{background-image:radial-gradient(circle at 4px 4px,var(--aco) 3px,transparent 3.6px)}
+h1,h2,h3{font-family:var(--fonte-titulo);font-weight:700;text-transform:uppercase;line-height:.95}
+h2{font-size:var(--t-h2)}
+h3{font-size:var(--t-h3);line-height:1}
+.intro{margin-top:1rem;max-width:38rem;color:var(--cinza)}
+.clara .intro{color:var(--tinta-suave)}
+
+/* ---------- Seções ---------- */
+.secao{padding-block:var(--secao)}
+.clara{background:var(--gelo);color:var(--tinta)}
+.faixa-aco{background:var(--aco-profundo)}
+
+/* ---------- Botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;min-height:3.5rem;padding:.9rem 1.4rem;border-radius:var(--borda);font-weight:700;font-size:1.125rem;line-height:1.2;text-decoration:none;transition:background-color .2s}
+.btn svg{width:1.3rem;height:1.3rem;flex:none}
+.btn-principal{background:var(--bronze);color:var(--tinta)}
+.btn-contorno{border:1.5px solid rgba(242,244,245,.6);color:var(--branco);font-weight:600}
+@media (hover:hover) and (pointer:fine){
+  .btn-principal:hover{background:var(--bronze-hover)}
+  .btn-contorno:hover{background:rgba(242,244,245,.08)}
+}
+
+/* ---------- Cabeçalho ---------- */
+.topo{position:absolute;left:0;right:0;z-index:20}
+.topo .container{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.1rem}
+/* Logo oficial (o mesmo do WhatsApp e do Instagram); a borda branca de adesivo funciona sobre o escuro */
+.logo{display:block;flex:none;text-decoration:none}
+.logo img{width:4.25rem;height:auto;filter:drop-shadow(0 4px 10px rgba(0,0,0,.45))}
+.logo-rodape img{width:8.75rem;filter:none}
+.menu-botao{display:flex;align-items:center;gap:.5rem;padding:.6rem .8rem;border:1.5px solid rgba(242,244,245,.6);border-radius:var(--borda);font-weight:600;font-size:1rem;min-height:2.75rem}
+.menu-botao svg{width:1.25rem;height:1.25rem}
+.menu{display:none}
+.menu.aberto{display:block;position:absolute;top:100%;left:var(--gutter);right:var(--gutter);background:var(--chumbo);border:1px solid var(--linha-escura);border-radius:var(--borda);padding:.5rem}
+.menu ul{list-style:none;padding:0}
+.menu a{display:block;padding:.85rem 1rem;font-weight:600;text-decoration:none;border-radius:var(--borda)}
+.topo-whats{display:none}
+
+/* ---------- Primeira dobra ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:7rem 0 2.5rem;overflow:hidden;isolation:isolate}
+.hero-foto{position:absolute;inset:0;width:100%;height:100%;z-index:-2;object-fit:cover;object-position:60% 50%}
+/* Véu escuro: garante leitura do texto sobre as faíscas */
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--grafite-rgb),.7) 0%,rgba(var(--grafite-rgb),.55) 18%,rgba(var(--grafite-rgb),.9) 34%,var(--grafite) 70%)}
+.hero h1{font-size:var(--t-h1);letter-spacing:.005em;max-width:12ch}
+.hero .sub{margin-top:1.1rem;font-size:clamp(1.125rem,4.6vw,1.3125rem);line-height:1.5;color:#DCE2E7;max-width:34rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.prova{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-top:1.75rem;padding:1.1rem 0 0;border-top:1px solid var(--linha-escura);list-style:none;color:var(--cinza);font-size:var(--t-pequeno)}
+.prova strong{color:var(--branco)}
+.estrela{color:var(--bronze-detalhe)}
+/* O telefone nunca quebra no meio da linha */
+[data-config="contato.celularExibicao"]{white-space:nowrap}
+
+/* ---------- Serviços ---------- */
+.servicos-lista{list-style:none;padding:0;margin-top:2.5rem;border-top:1px solid var(--linha-clara)}
+.servico{display:grid;grid-template-columns:3rem 1fr;gap:.25rem 1rem;padding:1.5rem 0;border-bottom:1px solid var(--linha-clara)}
+.servico .num{font:700 1.125rem/1.6 var(--fonte-titulo);color:var(--aco);letter-spacing:.06em}
+.servico p{grid-column:2;color:var(--tinta-suave);margin-top:.35rem}
+.servicos-final{margin-top:2rem;font-size:1.1875rem}
+.servicos-final a{color:var(--aco);font-weight:700}
+
+/* ---------- Como funciona ---------- */
+.passos{list-style:none;padding:0;margin-top:2.5rem;display:grid;gap:1rem;counter-reset:passo}
+.passo{position:relative;padding:1.5rem 1.5rem 1.5rem 4.75rem;background:rgba(0,0,0,.24);border-radius:var(--borda);counter-increment:passo}
+.passo::before{content:counter(passo);position:absolute;left:1.25rem;top:1.2rem;font:700 2.75rem/1 var(--fonte-titulo);color:var(--bronze-detalhe)}
+.passo h3{font-size:1.5rem}
+.passo p{margin-top:.4rem;color:var(--cinza)}
+
+/* ---------- Trabalhos (galeria) ---------- */
+.galeria{list-style:none;padding:0;margin-top:2.5rem;display:grid;grid-auto-flow:column;grid-auto-columns:82%;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.75rem;overscroll-behavior-x:contain}
+.galeria li{scroll-snap-align:start;min-width:0}
+.galeria figure{position:relative;height:100%}
+.galeria img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--borda)}
+.galeria figcaption{position:absolute;left:.6rem;bottom:.6rem;background:rgba(var(--grafite-rgb),.85);color:var(--branco);font-weight:600;font-size:.9375rem;padding:.3rem .65rem;border-radius:3px}
+.galeria-nota{margin-top:1rem;color:var(--tinta-suave);font-size:var(--t-pequeno)}
+.galeria-nota a{color:var(--aco);font-weight:700}
+
+/* ---------- Avaliações ---------- */
+.selo-google{display:inline-flex;align-items:baseline;gap:.6rem;margin-top:1.25rem;font-size:1.0625rem;color:var(--cinza)}
+.selo-google strong{font:700 2.75rem/1 var(--fonte-titulo);color:var(--branco)}
+.selo-google .estrela{letter-spacing:2px}
+.avaliacoes{list-style:none;padding:0;margin-top:2.25rem;display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.75rem;overscroll-behavior-x:contain}
+.avaliacao{scroll-snap-align:start;display:flex;flex-direction:column;gap:1rem;padding:1.5rem;background:var(--chumbo);border-radius:var(--borda);border-top:3px solid var(--bronze-detalhe)}
+.avaliacao:nth-child(even){border-top-color:var(--aco-claro)}
+.avaliacao blockquote p{font-size:1.125rem;line-height:1.55}
+.avaliacao footer{margin-top:auto;display:flex;justify-content:space-between;gap:1rem;font-size:.9375rem;color:var(--cinza)}
+.avaliacao cite{font-style:normal;font-weight:700;color:var(--branco)}
+.ver-todas{margin-top:1.5rem;color:var(--bronze-detalhe);font-weight:700}
+
+/* ---------- Sobre ---------- */
+.sobre-grade{display:grid;gap:2.25rem}
+.sobre-foto{position:relative}
+.sobre-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--borda)}
+.sobre-numero{position:absolute;right:-.25rem;bottom:-1.25rem;background:var(--aco-profundo);color:var(--gelo);padding:.9rem 1.1rem;border-radius:var(--borda);text-align:center}
+.sobre-numero strong{display:block;font:700 3.5rem/.9 var(--fonte-titulo);color:var(--bronze-detalhe)}
+.sobre-numero span{font:700 .9375rem/1.2 var(--fonte-titulo);letter-spacing:.1em;text-transform:uppercase}
+.sobre-texto p{margin-top:1rem;color:var(--tinta-suave);max-width:36rem}
+.sobre-texto p:first-of-type{margin-top:1.25rem}
+
+/* ---------- Dicas ---------- */
+.dicas{list-style:none;padding:0;margin-top:2.5rem;display:grid;gap:0;border-top:1px solid var(--linha-escura)}
+.dica{padding:1.5rem 0;border-bottom:1px solid var(--linha-escura)}
+.dica h3{font-size:1.5rem;color:var(--aco-claro)}
+.secao-dicas .chapeu{color:var(--aco-claro)}
+.secao-dicas .cordao{background-image:radial-gradient(circle at 4px 4px,var(--aco-claro) 3px,transparent 3.6px)}
+.dica p{margin-top:.5rem;color:var(--cinza);max-width:40rem}
+.dicas-cta{margin-top:2rem}
+
+/* ---------- Perguntas frequentes ---------- */
+.faq{margin-top:2.25rem;border-top:1px solid var(--linha-clara)}
+.faq details{border-bottom:1px solid var(--linha-clara)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.15rem 0;font-weight:700;font-size:1.1875rem;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:700 1.75rem/1 var(--fonte-titulo);color:var(--aco);flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 1.25rem;color:var(--tinta-suave);max-width:44rem}
+
+/* ---------- Chamada final ---------- */
+.chamada{position:relative;isolation:isolate;overflow:hidden}
+.chamada img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;z-index:-2}
+.chamada::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(var(--grafite-rgb),.95) 0%,rgba(var(--grafite-rgb),.88) 55%,rgba(var(--grafite-rgb),.55) 100%)}
+.chamada h2{max-width:14ch}
+.chamada p{margin-top:1rem;max-width:32rem;color:#DCE2E7}
+.chamada .telefones{margin-top:1.25rem;font-size:var(--t-pequeno);color:var(--cinza)}
+.chamada .telefones a{color:var(--branco);font-weight:600}
+
+/* ---------- Rodapé ---------- */
+.rodape{background:var(--chumbo);padding-block:3.5rem 6.5rem;font-size:var(--t-pequeno)}
+.rodape-grade{display:grid;gap:2.5rem}
+.rodape h2{font-size:1.75rem}
+.rodape address{font-style:normal;margin-top:1rem;color:var(--cinza);line-height:1.7}
+.redes{list-style:none;padding:0;display:flex;gap:.75rem;margin-top:1.25rem}
+.rede{display:grid;place-items:center;width:3rem;height:3rem;border:1.5px solid var(--linha-escura);border-radius:50%;color:var(--branco);transition:color .2s,border-color .2s}
+.rede svg{width:1.4rem;height:1.4rem}
+@media (hover:hover) and (pointer:fine){.rede:hover{color:var(--bronze-detalhe);border-color:var(--bronze-detalhe)}}
+.rodape .area{margin-top:1rem;color:var(--cinza)}
+/* Links de texto soltos com área de toque de pelo menos 24px (WCAG 2.2) */
+.galeria-nota a,.ver-todas,.telefones a,.rodape-fim a{display:inline-block;padding-block:.3rem}
+.rodape-fim{margin-top:3rem;padding-top:1.25rem;border-top:1px solid var(--linha-escura);display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;color:var(--cinza);font-size:.9375rem}
+
+/* Mapa com fachada: o Google Maps só carrega depois do clique em "Exibir mapa" */
+.mapa{position:relative;aspect-ratio:4/3;border-radius:var(--borda);overflow:hidden;background:
+  linear-gradient(90deg,transparent 46%,#2E363D 46% 50%,transparent 50%),
+  linear-gradient(0deg,transparent 58%,#2E363D 58% 62%,transparent 62%),
+  linear-gradient(28deg,transparent 30%,#2A3138 30% 33%,transparent 33%),
+  repeating-linear-gradient(90deg,#1E2429 0 22%,#262D33 22% 23%),
+  #1E2429}
+.mapa-capa{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;padding:1rem;text-align:center}
+.mapa-pino{width:2.6rem;height:2.6rem;color:var(--bronze-detalhe)}
+.mapa-botoes{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+.mapa-botoes .btn{min-height:2.9rem;padding:.65rem 1rem;font-size:1rem}
+.btn-mapa{background:var(--branco);color:var(--tinta)}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---------- WhatsApp flutuante (celular) ---------- */
+.whats-flutuante{position:fixed;right:1rem;bottom:1rem;z-index:40;display:flex;align-items:center;gap:.55rem;background:var(--bronze);color:var(--tinta);font-weight:700;padding:.85rem 1.1rem;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.35);text-decoration:none}
+.whats-flutuante svg{width:1.4rem;height:1.4rem}
+/* Só aparece depois que o botão principal da primeira tela sai da vista */
+.js .whats-flutuante{opacity:0;visibility:hidden;transform:translateY(1rem);transition:opacity .25s,transform .25s,visibility .25s}
+.js .whats-flutuante.mostrar{opacity:1;visibility:visible;transform:none}
+
+/* ---------- Animação ao rolar (só com movimento permitido) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth}
+  .js .revelar{opacity:0;transform:translateY(18px)}
+  .js .revelar.visivel{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .revelar{opacity:0}
+  .js .revelar.visivel{opacity:1;transition:opacity .4s}
+}
+
+/* =================== Tablet =================== */
+@media (min-width:48rem){
+  .galeria{grid-auto-flow:row;grid-template-columns:repeat(6,1fr);overflow:visible;padding:0}
+  .galeria li{grid-column:span 2}
+  .galeria li:nth-child(1){grid-column:span 4;grid-row:span 2}
+  .galeria li:nth-child(n+4){grid-column:span 3}
+  .galeria li:nth-child(1) img{aspect-ratio:auto}
+  .passos{grid-template-columns:1fr 1fr}
+  .avaliacoes{grid-auto-flow:row;grid-template-columns:repeat(6,1fr);overflow:visible;padding:0}
+  .avaliacao{grid-column:span 3}
+  .avaliacao:nth-child(1){grid-column:span 6}
+  .avaliacao:nth-child(1) blockquote p{font-size:1.4rem}
+  .servicos-lista{display:grid;grid-template-columns:1fr 1fr;column-gap:3rem}
+}
+
+/* =================== Desktop =================== */
+@media (min-width:60rem){
+  .menu-botao{display:none}
+  .menu,.menu.aberto{display:block;position:static;background:none;border:0;padding:0}
+  .menu ul{display:flex;gap:.5rem}
+  .menu a{padding:.5rem .8rem;color:var(--cinza)}
+  .topo-whats{display:inline-flex;min-height:2.75rem;padding:.55rem 1rem;font-size:1rem}
+  .topo .container{padding-block:1.25rem}
+  .topo .logo img{width:5.25rem}
+  .hero{min-height:min(100svh,58rem);align-items:center;padding:8rem 0 5rem}
+  .hero .sub{font-size:1.375rem}
+  .hero::after{background:linear-gradient(90deg,rgba(var(--grafite-rgb),.96) 0%,rgba(var(--grafite-rgb),.85) 38%,rgba(var(--grafite-rgb),.15) 70%,rgba(var(--grafite-rgb),.05) 100%)}
+  .hero-foto{object-position:50% 50%}
+  .passos{grid-template-columns:repeat(4,1fr)}
+  .passo{padding:4.5rem 1.5rem 1.75rem}
+  .passo::before{top:1.4rem;left:1.5rem}
+  .avaliacao{grid-column:span 2}
+  .avaliacao:nth-child(1){grid-column:span 4;grid-row:span 2;justify-content:center;padding:2.25rem}
+  .avaliacao:nth-child(1) blockquote p{font-size:1.75rem;line-height:1.4}
+  .avaliacao:nth-child(4),.avaliacao:nth-child(5){grid-column:span 3}
+  .sobre-grade{grid-template-columns:.85fr 1fr;align-items:center;gap:5rem}
+  .dicas{grid-template-columns:1fr 1fr;column-gap:3rem}
+  .secao-dicas .cabecalho{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end}
+  .rodape{padding-bottom:3.5rem}
+  .rodape-grade{grid-template-columns:1fr 1fr 1.2fr}
+  .whats-flutuante{display:none}
+}
+
+/* =================== Tablet na vertical (iPad) ===================
+   Tela alta e estreita: em vez de centralizar o texto num espaço enorme,
+   limita a altura, ancora o conteúdo embaixo (como no celular) e aumenta a escala. */
+@media (min-width:48rem) and (orientation:portrait){
+  .hero{min-height:min(100svh,68rem);align-items:flex-end;padding:9rem 0 4.5rem}
+  .hero::after{background:linear-gradient(180deg,rgba(var(--grafite-rgb),.55) 0%,rgba(var(--grafite-rgb),.2) 22%,rgba(var(--grafite-rgb),.55) 42%,rgba(var(--grafite-rgb),.94) 62%,var(--grafite) 100%)}
+  .hero-foto{object-position:62% 30%}
+  .hero h1{font-size:clamp(4.5rem,10vw,7rem);max-width:14ch}
+  .hero .chapeu{font-size:1.125rem}
+  .hero .cordao{width:11rem;margin-bottom:1.4rem}
+  .hero .sub{font-size:1.5rem;max-width:40rem;margin-top:1.5rem}
+  .hero .ctas{gap:1rem;margin-top:2.25rem}
+  .hero .btn{font-size:1.25rem;min-height:4rem;padding:1rem 1.75rem}
+  .hero .btn svg{width:1.5rem;height:1.5rem}
+  .prova{font-size:1.1875rem;gap:.75rem 2rem;margin-top:2.25rem;padding-top:1.4rem}
+  .topo .logo img{width:6rem}
+  .menu a{font-size:1.125rem}
+  .topo-whats{font-size:1.0625rem;min-height:3rem}
+}

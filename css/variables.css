@@ -1,0 +1,51 @@
+/* =========================================================
+   Identidade visual: Serralheria Luccas (direção "Oficina")
+   Contraste conferido por cálculo (WCAG); ver docs/identidade-visual.md
+   ========================================================= */
+
+@font-face{font-family:"Barlow Condensed";font-weight:700;font-display:swap;src:url(../assets/fonts/barlow-condensed-700.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-weight:400;font-display:swap;src:url(../assets/fonts/source-sans-3-400.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-weight:600;font-display:swap;src:url(../assets/fonts/source-sans-3-600.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-weight:700;font-display:swap;src:url(../assets/fonts/source-sans-3-700.woff2) format("woff2")}
+
+/* Fontes reserva calibradas: enquanto a fonte real carrega, o texto ocupa
+   o mesmo espaço, evitando o "pulo" de layout (CLS). Medidas calculadas. */
+@font-face{font-family:"Source Sans reserva";font-weight:400;src:local("Arial"),local("Liberation Sans"),local("Helvetica");size-adjust:92.1%;ascent-override:111.1%;descent-override:43.4%;line-gap-override:0%}
+@font-face{font-family:"Source Sans reserva";font-weight:600 700;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("Helvetica Bold");size-adjust:90.9%;ascent-override:112.7%;descent-override:44%;line-gap-override:0%}
+@font-face{font-family:"Barlow reserva";font-weight:700;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("Helvetica Bold");size-adjust:75.8%;ascent-override:131.9%;descent-override:26.4%;line-gap-override:0%}
+
+:root{
+  /* Cores: base neutra fria (ferro e aço) + azul-aço de apoio + bronze do logo.
+     Proporção aproximada: grafite/chumbo 50% · gelo 30% · azul-aço 12% · bronze 5%. */
+  --grafite:#15191D;      /* fundo escuro principal */
+  --grafite-rgb:21,25,29; /* o mesmo grafite, para véus com transparência */
+  --chumbo:#222930;       /* cartões e rodapé sobre o grafite */
+  --aco-profundo:#1C3242; /* fundo da faixa azul ("Como funciona") */
+  --aco:#2C5570;          /* azul-aço para detalhes nas seções claras (7,0:1) */
+  --aco-claro:#8FB1C9;    /* azul-aço para detalhes no escuro (7,8:1) */
+  --bronze:#C9A57F;       /* SÓ o botão principal (WhatsApp), cor do logo */
+  --bronze-hover:#D6B694;
+  --bronze-detalhe:#C9A57F; /* chapéus, estrelas e números no escuro (7,7:1) */
+  --branco:#F2F4F5;       /* texto no escuro (15,9:1) */
+  --cinza:#B4BDC5;        /* texto secundário no escuro (9,0:1) */
+  --gelo:#EEF1F3;         /* fundo das seções claras */
+  --tinta:#15191D;        /* texto no claro (16,0:1) */
+  --tinta-suave:#4E5964;  /* texto secundário no claro (6,3:1) */
+  --linha-escura:rgba(242,244,245,.14);
+  --linha-clara:#D9DEE3;
+
+  /* Tipografia */
+  --fonte-titulo:"Barlow Condensed","Barlow reserva",sans-serif;
+  --fonte-texto:"Source Sans 3","Source Sans reserva",sans-serif;
+  --t-h1:clamp(2.875rem,11vw,5.75rem);
+  --t-h2:clamp(2.25rem,7.5vw,3.75rem);
+  --t-h3:clamp(1.5rem,4.6vw,1.875rem);
+  --t-corpo:1.125rem;      /* 18px: corrige o texto pequeno do site atual */
+  --t-pequeno:1rem;
+
+  /* Espaços e forma */
+  --borda:4px;
+  --gutter:clamp(1.25rem,5vw,3.5rem);
+  --secao:clamp(4rem,10vw,7.5rem);
+  --largura:72rem;
+}
